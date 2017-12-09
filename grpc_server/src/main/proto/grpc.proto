@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.dmitr.romashov.grpc_server";
+option java_outer_classname = "FactorizationServiceProto";
+
+service FactorizationService {
+    rpc getMultipliers(InfoRequest) returns (InfoResponse) {}
+}
+
+
+message InfoRequest {
+    int32 value = 1;
+}
+
+message InfoResponse {
+    repeated int32 multipliers = 1;
+}
