@@ -4,7 +4,6 @@ import io.grpc.*
 import io.grpc.stub.StreamObserver
 import java.util.concurrent.TimeUnit
 
-//import java.util.*;
 
 class FactorizationService(): FactorizationServiceGrpc.FactorizationServiceImplBase() {
 
@@ -28,10 +27,6 @@ class FactorizationService(): FactorizationServiceGrpc.FactorizationServiceImplB
         val response = InfoResponse.newBuilder()
                 .addAllMultipliers(multipliers)
                 .build()
-
-//        println("Sleep started")
-//        TimeUnit.SECONDS.sleep(10);
-//        println("Sleep ended")
 
         responseObserver.onNext(response)
         responseObserver.onCompleted()
